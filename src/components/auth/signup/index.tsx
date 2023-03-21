@@ -52,8 +52,7 @@ export function SignUp(): JSX.Element {
     }
 
     try {
-      const { data, status } = await api({ 
-        withCredentials: true, 
+      const { data, status } = await api({  
         method: "post", 
         url: "/createUser", 
         data: userData 

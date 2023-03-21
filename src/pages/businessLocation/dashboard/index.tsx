@@ -32,7 +32,7 @@ export function DashboardLocation(): JSX.Element {
     }
 
     async function fetchData() {
-      const { data } = await api<BusinessWithProps[]>({ withCredentials: true, method: "get", url: "/businessReturned" })
+      const { data } = await api<BusinessWithProps[]>({ method: "get", url: "/businessReturned" })
 
       data.map(({ LocalBusiness, id }) => {
         if (LocalBusiness.length >= 1) {

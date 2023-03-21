@@ -30,7 +30,6 @@ export function DeleteLocationModal(): JSX.Element {
     useEffect(() => {
         async function fetchData() {
             const { data } = await api({
-                withCredentials: true,
                 method: "get",
                 url: `/locationFinded/${id}`
             })
@@ -44,7 +43,6 @@ export function DeleteLocationModal(): JSX.Element {
     async function handleDelete() {
         try {
             const { data } = await api({
-                withCredentials: true,
                 method: "delete",
                 url: `/deleteLocation/${id}`
             })

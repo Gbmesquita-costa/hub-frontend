@@ -46,7 +46,6 @@ export function BusinessModal() {
 
         try {
             const { data, status } = await api({
-                withCredentials: true,
                 method: "post",
                 url: "/createBusiness",
                 data: businessData

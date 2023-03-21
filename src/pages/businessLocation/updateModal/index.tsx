@@ -51,7 +51,6 @@ export function UpdateLocationModal(): JSX.Element {
     useEffect(() => {
         async function fetchData() {
             const { data } = await api({
-                withCredentials: true,
                 method: "get",
                 url: `/locationFinded/${id}`
             })
@@ -66,7 +65,6 @@ export function UpdateLocationModal(): JSX.Element {
     async function handleCreateLocal(location: BusinessLocation) {
         try {
             const { data } = await api({
-                withCredentials: true,
                 method: "put",
                 url: `/updateLocation/${id}`,
                 data: location

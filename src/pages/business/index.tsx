@@ -26,7 +26,7 @@ export function Business(): JSX.Element {
 
   useEffect(() => {
     async function fetchData() {
-      const { data } = await api<BusinessWithProps[]>({ withCredentials: true, method: "get", url: "/businessReturned" })
+      const { data } = await api<BusinessWithProps[]>({ method: "get", url: "/businessReturned" })
       setBusiness(data)
     }
 

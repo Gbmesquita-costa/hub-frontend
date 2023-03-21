@@ -66,7 +66,6 @@ export function ContextApi({ children }: ChildrenWithProps): JSX.Element {
 
         if (token) {
             api({
-                withCredentials: true,
                 method: "get",
                 url: "/getUser"
             }).then((response) => {
@@ -118,7 +117,6 @@ export function ContextApi({ children }: ChildrenWithProps): JSX.Element {
             }
 
             const { data } = await api({
-                withCredentials: true,
                 method: "post",
                 url: "/login",
                 data: userLogin

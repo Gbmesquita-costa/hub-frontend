@@ -28,7 +28,6 @@ export function DeleteModal() {
     useEffect(() => {
         async function fetchData() {
             const { data } = await api({
-                withCredentials: true,
                 method: "get",
                 url: `/businessFinded/${id}`
             })
@@ -42,7 +41,6 @@ export function DeleteModal() {
     async function handleDelete() {
         try {
             const { data } = await api({
-                withCredentials: true,
                 method: "delete",
                 url: `/deleteBusiness/${id}`
             })

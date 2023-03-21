@@ -50,7 +50,6 @@ export function BusinessLocationPainel(): JSX.Element {
 
     async function fetchData() {
       const { data } = await api<BusinessLocationWithProps[]>({
-        withCredentials: true,
         method: "get",
         url: "/businessReturned"
       })

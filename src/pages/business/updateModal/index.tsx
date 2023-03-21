@@ -44,7 +44,6 @@ export function UpdateModal(): JSX.Element {
     useEffect(() => {
         async function fetchData() {
             const { data } = await api({
-                withCredentials: true,
                 method: "get",
                 url: `/businessFinded/${id}`
             })
@@ -65,7 +64,6 @@ export function UpdateModal(): JSX.Element {
 
         try {
             const { data } = await api({
-                withCredentials: true,
                 method: "put",
                 url: `/updateBusiness/${id}`,
                 data: businessData

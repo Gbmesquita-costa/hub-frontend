@@ -50,7 +50,6 @@ export function LocationModal(): JSX.Element {
 
         try {
             const { data, status } = await api({
-                withCredentials: true,
                 method: "post",
                 url: `/createLocation/${id}`,
                 data: location
