@@ -1,0 +1,41 @@
+.container {
+    width: 600px;
+    max-width: 100%;
+    margin: 30px auto;
+
+    .firstInput {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .inputs {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 280px;
+
+            input {
+                padding-left: 50px;
+            }
+        }
+    }
+}
+
+@media (max-width: 540px) {
+    .container {
+        padding: 7px;
+
+        .inputs {
+            div:nth-child(1) {
+                padding-right: 45px;
+            }
+        }
+    }
+}

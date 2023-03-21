@@ -1,0 +1,26 @@
+.mainintial {
+    margin-top: 100px;
+
+    .title {
+        h1 {
+            text-align: center;
+            font-weight: 700;
+            font-size: 3.8rem;
+        }
+    }
+    
+    .button {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 35px;
+    
+        button {
+            height: 60px;
+            width: 329px;
+    
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+}
+}

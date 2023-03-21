@@ -1,0 +1,31 @@
+.page {
+    width: 100%;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 0.65fr 1fr;
+    grid-template-areas: "banner form";
+    background: linear-gradient(90deg, #ECECEC 0%, #FFFFFF 14.58%);
+
+    .banner {
+        background-image: url("../../assets/login/loginImage.png");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        grid-area: banner;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .page {
+        width: 100%;
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "form form";
+    }
+
+    .banner {
+        display: none;
+    }
+}
