@@ -25,8 +25,6 @@ Essa é uma aplicação web React para gerenciar empresas e seus respectivos loc
 
 ## Como executar a aplicação
 
-Caso queira ver o deploy da aplicação, acesse o link: https://hub-frontend-xi.vercel.app/
-
 1. Clone o repositório para o seu computador
 2. Na pasta raiz do projeto, execute o comando npm install para instalar as dependências necessárias
 3. Execute o comando npm start para iniciar a aplicação
