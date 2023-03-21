@@ -4,7 +4,7 @@ import { destroyCookie, parseCookies } from "nookies"
 const { "user_token": token } = parseCookies()
 
 export const api = axios.create({
-    baseURL: "http://localhost:3333"
+    baseURL: "https://hub-backend-nu.vercel.app"
 })
 
 if (token) {
