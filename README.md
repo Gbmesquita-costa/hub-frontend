@@ -32,8 +32,6 @@ Caso queira ver o deploy da aplicação, acesse o link: https://hub-frontend-xi.
 3. Execute o comando npm start para iniciar a aplicação
 4. Acesse a aplicação em http://localhost:3000
 
-Obs: A aplicação está consumindo uma api já em deploy! Caso esteja tendo problemas com o consumo da api ou incompatibilidades, recomendo que vá até a pasta src/services/axios.ts e mude para http://localhost:3333, assim, a aplicação irá consumir a api em local host. Lembrando, que para consumir o backend em localhost, deverá clonar o repositório hub-backend, e na pasta src/index.ts, no trecho de código cors({}), o valor origin deverá ser mudado e apontado para o localHost do front-end => http://localhost:3000.
-
 ## Como utilizar a aplicação
 
 Ao acessar a aplicação, você será redirecionado para a página de login. Caso não tenha um usuário cadastrado, clique no botão "criar conta" para se cadastrar. Após o login, você será redirecionado para a página inicial, onde poderá criar e gerenciar suas empresas e locais.
