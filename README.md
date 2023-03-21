@@ -1,46 +1,59 @@
-# Getting Started with Create React App
+## Aplicação React para gerenciamento de empresas e locais
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Essa é uma aplicação web React para gerenciar empresas e seus respectivos locais. A aplicação tem a funcionalidade de criação e autenticação de usuário, permitindo que apenas usuários autenticados possam acessar as funcionalidades de gerenciamento.
 
-## Available Scripts
+## Tecnologias utilizadas
 
-In the project directory, you can run:
+. React
+. Material UI
+. SASS
+. Axios
+. Nookies
+. Context API
+. React Toastify
+. React Router DOM
+. Framer Motion
+. Yup
+. React Hook Form
+. TypeScript
 
-### `yarn start`
+## Funcionalidades
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+. Sistema de criação e autenticação de usuário
+. Gerenciamento de empresas, permitindo a criação, listagem, edição e exclusão de empresas pertencentes ao usuário autenticado
+. Gerenciamento de locais, permitindo a criação, listagem, edição e exclusão de locais pertencentes a uma empresa específica do usuário autenticado
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Como executar a aplicação
 
-### `yarn test`
+Caso queira ver o deploy da aplicação, acesse o link: https://hub-frontend-xi.vercel.app/
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone o repositório para o seu computador
+2. Na pasta raiz do projeto, execute o comando npm install para instalar as dependências necessárias
+3. Execute o comando npm start para iniciar a aplicação
+4. Acesse a aplicação em http://localhost:3000
 
-### `yarn build`
+Obs: A aplicação está consumindo uma api já em deploy! Caso esteja tendo problemas com o consumo da api ou incompatibilidades, recomendo que vá até a pasta src/services/axios.ts e mude para http://localhost:3333, assim, a aplicação irá consumir a api em local host. Lembrando, que para consumir o backend em localhost, deverá clonar o repositório hub-backend, e na pasta src/index.ts, no trecho de código cors({}), o valor origin deverá ser mudado e apontado para o localHost do front-end => http://localhost:3000.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Como utilizar a aplicação
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Ao acessar a aplicação, você será redirecionado para a página de login. Caso não tenha um usuário cadastrado, clique no botão "criar conta" para se cadastrar. Após o login, você será redirecionado para a página inicial, onde poderá criar e gerenciar suas empresas e locais.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Gerenciamento de empresas
 
-### `yarn eject`
+Na página inicial, você poderá visualizar a lista de suas empresas cadastradas. Para criar uma nova empresa, clique no botão "Nova empresa" e preencha o formulário com as informações necessárias. Ao clicar em "Adicionar", a nova empresa será adicionada à lista.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Para editar ou excluir uma empresa, basta clicar no ícone correspondente na lista de empresas. Ao clicar no ícone de edição, você poderá alterar as informações da empresa. Ao clicar no ícone de exclusão, a empresa será removida da lista.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Gerenciamento de locais
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Ao clicar em uma empresa na lista de empresas, você será redirecionado para a página de gerenciamento de locais da empresa selecionada. Nessa página, você poderá visualizar a lista de locais pertencentes à empresa selecionada.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Para criar um novo local, clique no botão "Adicionar local" e preencha o formulário com as informações necessárias. Ao clicar em "Adicionar", o novo local será adicionado à lista.
 
-## Learn More
+Para editar ou excluir um local, basta clicar no ícone correspondente na lista de locais. Ao clicar no ícone de edição, você poderá alterar as informações do local. Ao clicar no ícone de exclusão, o local será removido da lista.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Conclusão
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Essa é uma aplicação React completa para gerenciamento de empresas e locais, com funcionalidades de autenticação e controle de acesso. A aplicação utiliza uma variedade de tecnologias modernas do ecossistema React, incluindo Material UI, React Router DOM, Framer Motion, TypeScript, entre outras.
+
+Sinta-se à vontade para clonar o repositório e experimentar a aplicação você mesmo! 😊
