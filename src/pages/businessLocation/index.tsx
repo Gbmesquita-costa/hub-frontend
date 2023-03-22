@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { parseCookies } from 'nookies';
 
 import { motion } from "framer-motion"
@@ -25,21 +25,14 @@ interface BusinessLocation {
   businessId?: string;
 }
 
-interface BusinessLocationWithProps {
-  id: string;
-  name: string;
-  website: string;
-  LocalBusiness: [];
-  cnpj: string;
-}
-
 export function BusinessLocationPainel(): JSX.Element {
-  const { setLocationActive } = UseContext()
-
+  const {setLocationActive, setBusinessId} = UseContext()
   const [businessLocation, setBusinessLocation] = useState<BusinessLocation[]>([])
-  const [businessId, setBusinessId] = useState<string>("")
 
   const navigate = useNavigate()
+  const { id } = useParams()
+
+  setBusinessId(id)
 
   useEffect(() => {
     const { "user_token": token } = parseCookies()
@@ -49,15 +42,12 @@ export function BusinessLocationPainel(): JSX.Element {
     }
 
     async function fetchData() {
-      const { data } = await api<BusinessLocationWithProps[]>({
+      const { data } = await api<BusinessLocation[]>({
         method: "get",
-        url: "/businessReturned"
+        url: `/locationReturned/${id}`
       })
 
-      data.map(({ LocalBusiness, id }) => {
-        setBusinessLocation(LocalBusiness)
-        setBusinessId(id)
-      })
+      setBusinessLocation(data)
     }
 
     fetchData()
@@ -81,7 +71,7 @@ export function BusinessLocationPainel(): JSX.Element {
       <div className={styles.addBusiness}>
         <Button 
           variant='contained' 
-          onClick={() => navigate(`/dashboard/location/create/${businessId}`)}
+          onClick={() => navigate(`/dashboard/location/create/${id}`)}
         >
           Adicionar Local
         </Button>

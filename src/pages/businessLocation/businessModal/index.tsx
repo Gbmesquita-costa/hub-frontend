@@ -60,7 +60,7 @@ export function LocationModal(): JSX.Element {
                     autoClose: 3000
                 })
 
-                navigate("/dashboard/location/painel")
+                navigate(`/dashboard/location/painel/${id}`)
             }
         } catch (error: any) {
             toast.error(error.response.data.message, {
@@ -106,7 +106,7 @@ export function LocationModal(): JSX.Element {
 
                         <div>
                             <Button onClick={() => {
-                                navigate("/dashboard/location/painel")
+                                navigate(`/dashboard/location/painel/${id}`)
                             }}>
                                 <img src={Close} alt="close_png" />
                             </Button>

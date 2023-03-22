@@ -7,6 +7,7 @@ import { Button } from "@mui/material"
 import { api } from "../../../services/axios"
 import { useNavigate, useParams } from "react-router-dom"
 
+import { UseContext } from "../../../context/context"
 import Close from "../../../assets/dashboard/business/close.png"
 
 import styles from "./styles.module.scss"
@@ -22,6 +23,7 @@ interface BusinessLocation {
 }
 
 export function DeleteLocationModal(): JSX.Element {
+    const { businessId } = UseContext()
     const [location, setLocation] = useState<BusinessLocation>({} as BusinessLocation)
 
     const { id } = useParams()
@@ -51,7 +53,7 @@ export function DeleteLocationModal(): JSX.Element {
                 autoClose: 3000
             })
 
-            navigate("/dashboard/location/painel")
+            navigate(`/dashboard/location/painel/${businessId}`)
 
         } catch (error: any) {
             toast.error(error.response.data.message, {
@@ -97,7 +99,7 @@ export function DeleteLocationModal(): JSX.Element {
 
                         <div>
                             <Button onClick={() => { 
-                                navigate("/dashboard/location/painel") 
+                                navigate(`/dashboard/location/painel/${businessId}`) 
                             }}>
                                 <img src={Close} alt="close_png" />
                             </Button>

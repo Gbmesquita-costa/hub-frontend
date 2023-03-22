@@ -32,8 +32,8 @@ export function MainRoutes (): JSX.Element {
                 <Route path="/dashboard/delete/:id" element={<DeleteModal/>}/>
             </Route>
             <Route path="/dashboard/location" element={<Dashboard/>}>
-                <Route path="/dashboard/location" element={<DashboardLocation/>}/>
-                <Route path="/dashboard/location/painel" element={<BusinessLocationPainel/>}/> 
+                <Route path="/dashboard/location/:id" element={<DashboardLocation/>}/>
+                <Route path="/dashboard/location/painel/:id" element={<BusinessLocationPainel/>}/> 
                 <Route path="/dashboard/location/create/:id" element={<LocationModal/>}/> 
                 <Route path="/dashboard/location/update/:id" element={<UpdateLocationModal/>}/>   
                 <Route path="/dashboard/location/delete/:id" element={<DeleteLocationModal/>}/>    

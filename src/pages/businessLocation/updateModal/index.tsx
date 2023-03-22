@@ -38,7 +38,7 @@ const locationValidation = yup.object().shape({
 })
 
 export function UpdateLocationModal(): JSX.Element {
-    const { checkCep, maskedCep } = UseContext()
+    const { checkCep, maskedCep, businessId } = UseContext()
     const [location, setLocation] = useState<BusinessLocation>({} as BusinessLocation)
 
     const { id } = useParams()
@@ -74,7 +74,7 @@ export function UpdateLocationModal(): JSX.Element {
                 autoClose: 3000
             })
 
-            navigate("/dashboard/location/painel")
+            navigate(`/dashboard/location/painel/${businessId}`)
 
         } catch (error: any) {
             toast.error(error.response.data.message, {
@@ -107,7 +107,7 @@ export function UpdateLocationModal(): JSX.Element {
 
                         <div>
                             <Button onClick={() => {
-                                navigate("/dashboard/location/painel")
+                                navigate(`/dashboard/location/painel/${businessId}`)
                             }}>
                                 <img src={Close} alt="close_png" />
                             </Button>

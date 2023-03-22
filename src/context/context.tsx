@@ -45,6 +45,8 @@ interface ContextWithProps {
     setActive: Dispatch<SetStateAction<boolean>>;
     isAuthenticated: boolean;
     user: User | null;
+    setBusinessId: Dispatch<SetStateAction<string | undefined>>;
+    businessId: string | undefined;
 }
 
 export const context = createContext({} as ContextWithProps)
@@ -58,6 +60,8 @@ export function ContextApi({ children }: ChildrenWithProps): JSX.Element {
     
     const [user, setUser] = useState<User | null>(null)
     const isAuthenticated = !!user
+
+    const [businessId, setBusinessId] = useState<string | undefined>("")
 
     const navigate = useNavigate()
     
@@ -151,7 +155,8 @@ export function ContextApi({ children }: ChildrenWithProps): JSX.Element {
             BusinessInputMask, businessCnpj, handleModal, 
             active, setActive, locationActive, 
             setLocationActive, handleLogin, LogOut, 
-            isAuthenticated, user, checkCep, maskedCep
+            isAuthenticated, user, checkCep, maskedCep,
+            setBusinessId, businessId
         }}>
             {children}
         </context.Provider>

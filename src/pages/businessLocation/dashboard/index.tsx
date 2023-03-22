@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { parseCookies } from "nookies";
 import { motion } from "framer-motion"
 
@@ -21,8 +21,8 @@ interface BusinessWithProps {
 export function DashboardLocation(): JSX.Element {
   const { setLocationActive } = UseContext()
 
-  const [locationId, setLocationId] = useState<string>("")
   const navigate = useNavigate()
+  const { id } = useParams()
 
   useEffect(() => {
     const { "user_token": token } = parseCookies()
@@ -32,21 +32,21 @@ export function DashboardLocation(): JSX.Element {
     }
 
     async function fetchData() {
-      const { data } = await api<BusinessWithProps[]>({ method: "get", url: "/businessReturned" })
-
-      data.map(({ LocalBusiness, id }) => {
-        if (LocalBusiness.length >= 1) {
-          navigate("/dashboard/location/painel")
-        }
-        setLocationId(id)
+      const { data } = await api<BusinessWithProps[]>({
+        method: "get",
+        url: `/locationReturned/${id}`
       })
+
+      if (data.length >= 1) {
+        navigate(`/dashboard/location/painel/${id}`)
+      }
     }
 
     fetchData()
   }, [])
 
   return (
-    <motion.div 
+    <motion.div
       className={styles.mainintial}
       initial={{
         y: -200,
@@ -68,7 +68,7 @@ export function DashboardLocation(): JSX.Element {
       <div className={styles.button}>
         <Button
           variant="contained"
-          onClick={() => navigate(`/dashboard/location/create/${locationId}`)}
+          onClick={() => navigate(`/dashboard/location/create/${id}`)}
         >
           Adicionar Local
         </Button>

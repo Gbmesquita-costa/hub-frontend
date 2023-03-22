@@ -87,7 +87,7 @@ export function Business(): JSX.Element {
                         <img src={Pencil} alt="pencil_png" />
                       </button>
                       <button onClick={() =>
-                        navigate(`/dashboard/location`)
+                        navigate(`/dashboard/location/${business.id}`)
                       }>
                         <img src={Location} alt="business_location" />
                       </button>
