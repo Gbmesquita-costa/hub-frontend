@@ -25,7 +25,7 @@ Essa é uma aplicação web React para gerenciar empresas e seus respectivos loc
 
 ## Como executar a aplicação
 
-Link da aplicação em produção: https://hub-frontend-drab.vercel.app/
+Link da aplicação em produção: https://front-hub.vercel.app/
 
 1. Clone o repositório para o seu computador
 2. Na pasta raiz do projeto, execute o comando npm install para instalar as dependências necessárias
